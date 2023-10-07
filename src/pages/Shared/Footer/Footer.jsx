@@ -9,7 +9,7 @@ const Footer = () => {
                 <nav >
                     <header className="font-bold text-xl">Contact Us</header>
 
-                    <img className="w-20" src="/src/assets/logo/FlavorFest.png" alt="" />
+                    <img className="w-16" src="/src/assets/logo/FlavorFest.png" alt="" />
                     <p>
                         123, ABS Street, Uni 21, Bangladesh<br />
                         +88 123456789 <br />
@@ -27,9 +27,9 @@ const Footer = () => {
                     </div>
                 </nav>
             </footer>
-            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer className="footer footer-center p-4 bg-black  text-white">
                 <aside>
-                    <p>Copyright © {year} - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © {year} - All right reserved by FlavorFest Restaurant Ltd</p>
                 </aside>
             </footer>
         </div>
