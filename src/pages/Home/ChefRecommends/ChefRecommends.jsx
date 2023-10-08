@@ -11,27 +11,14 @@ const ChefRecommends = () => {
                 subheading={'Should Try'}
             ></SectionTitle>
 
-            <div className='grid grid-cols-3 gap-8 mt-6'>
+            <div className='grid md:grid-cols-3 gap-8 mt-10'>
 
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure>
                         <img src={salad} alt="Caeser Salad" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Caeser Salad</h2>
-                        <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
-                        <div className="card-actions">
-                            <button className="btn  btn-outline border-b-4 uppercase">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={pizza} alt="Caeser Pizza" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="card-title">Caeser Pizza</h2>
+                        <h2 className="card-title font-bold">Caeser Salad</h2>
                         <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
                         <div className="card-actions">
                             <button className="btn  btn-outline border-b-4 uppercase">Add to Cart</button>
@@ -40,11 +27,24 @@ const ChefRecommends = () => {
                 </div>
 
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
+                    <figure>
+                        <img src={pizza} alt="Caeser Pizza" className="rounded-xl" />
+                    </figure>
+                    <div className="card-body items-center text-center">
+                        <h2 className="card-title font-bold">Caeser Pizza</h2>
+                        <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
+                        <div className="card-actions">
+                            <button className="btn  btn-outline border-b-4 uppercase">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <figure>
                         <img src={soup} alt="Caeser Soup" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Caeser Soup</h2>
+                        <h2 className="card-title font-bold">Caeser Soup</h2>
                         <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
                         <div className="card-actions">
                             <button className="btn  btn-outline border-b-4 uppercase">Add to Cart</button>
