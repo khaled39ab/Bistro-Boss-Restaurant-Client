@@ -15,40 +15,56 @@ import slide8 from '../../../assets/home/slide8.jpg';
 
 const Category = () => {
     return (
-        <Swiper
-            slidesPerView={4}
-            spaceBetween={20}
-            pagination={{
-                clickable: true,
-            }}
-            modules={[Pagination]}
-            className="mb-20"
-        >
-            <SwiperSlide>
-                <img src={slide1} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide2} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide3} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide4} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide5} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide6} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide7} alt="food-category" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide8} alt="food-category" />
-            </SwiperSlide>
-        </Swiper>
+        <>
+            <div className="flex flex-col w-full border-opacity-50">
+                <div className="divider"></div>
+                <div className="grid h-20 card bg-base-300 rounded-box place-items-center uppercase">Order Online</div>
+                <div className="divider"></div>
+            </div>
+
+            <Swiper
+                slidesPerView={4}
+                spaceBetween={20}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mb-20"
+            >
+                <SwiperSlide>
+                    <img src={slide1} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Salads</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide2} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Pizzas</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide3} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Soup</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide4} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Desserts</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide5} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Salads</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide6} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Pizzas</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide7} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Soup</h4>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide8} alt="food-category" />
+                    <h4 className='text-3xl text-white text-center -mt-14 uppercase'>Desserts</h4>
+                </SwiperSlide>
+            </Swiper>
+        </>
     );
 };
 
