@@ -4,6 +4,7 @@ import CellNumber from "../CellNumber/CellNumber";
 import ChefRecommends from "../ChefRecommends/ChefRecommends";
 import FeaturedItem from "../FeaturedItem/FeaturedItem";
 import PopularMenu from "../PopularMenu/PopularMenu";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <CellNumber />
             <ChefRecommends />
             <FeaturedItem />
+            <Testimonial />
         </div>
     );
 };

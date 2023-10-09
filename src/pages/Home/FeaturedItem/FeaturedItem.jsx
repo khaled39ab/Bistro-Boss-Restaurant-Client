@@ -20,6 +20,7 @@ const FeaturedItem = () => {
                     <p className='text-justify my-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cupiditate impedit earum totam, quam esse consequatur possimus asperiores beatae quo obcaecati corrupti cum incidunt, aspernatur repudiandae dolorem neque, velit provident.</p>
                     <button className="btn btn-outline border-0  border-b-4 text-white mt-2">Order Now</button>
                 </div>
+                
             </div>
         </div>
     );
