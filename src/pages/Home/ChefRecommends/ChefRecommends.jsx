@@ -11,7 +11,7 @@ const ChefRecommends = () => {
                 subheading={'Should Try'}
             ></SectionTitle>
 
-            <div className='grid md:grid-cols-3 gap-8 mt-10'>
+            <div className='grid md:grid-cols-3 gap-8 mt-10 pl-3'>
 
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure>
