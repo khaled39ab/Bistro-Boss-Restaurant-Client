@@ -1,17 +1,11 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const navOption = <>
-        <li><a>Item 1</a></li>
-        <li tabIndex={0}>
-            <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
-                </ul>
-            </details>
-        </li>
-        <li><a>Item 3</a></li>
+        <li><Link to={'/home'}>Home</Link></li>
+        <li><Link to={'/menu'}>Menu</Link></li>
+        <li><Link to={'/'}></Link></li>
+        <li><Link to={'/'}></Link></li>
     </>
     return (
         <>
@@ -25,18 +19,16 @@ const Navbar = () => {
                             {navOption}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">
+                    <Link className="btn btn-ghost normal-case text-xl">
                         <img className="w-10 -mr-2" src="/src/assets/logo/FlavorFest.png" alt="" />
                         FlavorFest
-                    </a>
+                    </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navOption}
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button className="btn">Default</button>
                 </div>
             </div>
         </>

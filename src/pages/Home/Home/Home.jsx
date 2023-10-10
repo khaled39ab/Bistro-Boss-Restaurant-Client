@@ -1,3 +1,4 @@
+import PageHelmet from "../../../components/PageHelmet/PageHelmet";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import CellNumber from "../CellNumber/CellNumber";
@@ -10,6 +11,7 @@ import Testimonial from "../Testimonial/Testimonial";
 const Home = () => {
     return (
         <div>
+            <PageHelmet pageName={'Home'}></PageHelmet>
             <Banner />
             <Category />
             <RestaurantInfo />
