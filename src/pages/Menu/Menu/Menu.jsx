@@ -1,13 +1,44 @@
 import PageHelmet from "../../../components/PageHelmet/PageHelmet";
 import MenuBar from "../../Shared/MenuBar/MenuBar";
-import menuImg from '../../../assets/menu/menu.jpg'
+import menuImg from '../../../assets/menu/menu.jpg';
+import dessertImg from '../../../assets/menu/dessert-bg.jpeg';
+import pizzaImg from '../../../assets/menu/pizza-bg.jpg';
+import saladsImg from '../../../assets/menu/salad-bg.jpg';
+import soupImg from '../../../assets/menu/soup-bg.jpg';
+import useMenu from "../../../hooks/useMenu";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import MenuCategory from "../MenuCategory/MenuCategory";
 
-    
+
 const Menu = () => {
+    const [menu] = useMenu();
+
+    const desserts = menu.filter(item => item.category === 'dessert');
+    const salads = menu.filter(item => item.category === 'salad');
+    const pizza = menu.filter(item => item.category === 'pizza');
+    const soup = menu.filter(item => item.category === 'soup');
+    const offered = menu.filter(item => item.category === 'offered');
+
     return (
-        <div>
+        <div className="mb-16">
             <PageHelmet pageName={'Menu'}></PageHelmet>
-            <MenuBar title={'Our Menu'} subtitle={'Would you like to try our dish?'} img={menuImg}/>
+
+            <MenuBar title={'Our Menu'} subtitle={'Would you like to try our dish?'} img={menuImg} />
+
+            <SectionTitle subheading={"Don't Miss"} heading={"Today's Offer"}></SectionTitle>
+            <MenuCategory items={offered}></MenuCategory>
+
+            <MenuBar title={'Desserts'} img={dessertImg} />
+            <MenuCategory items={desserts}></MenuCategory>
+
+            <MenuBar title={'Pizza'} img={pizzaImg} />
+            <MenuCategory items={pizza}></MenuCategory>
+
+            <MenuBar title={'Salads'} img={saladsImg} />
+            <MenuCategory items={salads}></MenuCategory>
+
+            <MenuBar title={'Soup'} img={soupImg} />
+            <MenuCategory items={soup}></MenuCategory>
         </div>
     );
 };
