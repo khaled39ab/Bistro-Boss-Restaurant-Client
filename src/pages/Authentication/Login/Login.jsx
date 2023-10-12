@@ -1,13 +1,13 @@
-import loginImg from '../../../assets/others/authentication1.png';
+import './Login.css';
 
 const Login = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row shadow-2xl">
-                <div className="text-center lg:text-left w-[650px]" style={{backgroundImage: `url(${loginImg})`}}>
-                    <h1 className='p-48'>Hello</h1>
+            <div className="hero-content flex-col lg:flex-row shadow-2xl px-8 py-6">
+                <div className="text-center lg:text-left img-section">
+                    
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                     <h3 className='text-3xl font-bold text-center mt-5'>Login</h3>
                     <form className="card-body">
                         <div className="form-control">
