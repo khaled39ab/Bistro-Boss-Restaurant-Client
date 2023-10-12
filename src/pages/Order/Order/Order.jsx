@@ -5,12 +5,12 @@ import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import useMenu from "../../../hooks/useMenu";
 import OrderTab from "../OrderTab/OrderTab";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const Order = () => {
     const [tabIndex, setTabIndex] = useState(0);
     const [menu] = useMenu();
-    const {category} = useParams();
+    // const {category} = useParams();
     
     const desserts = menu.filter(item => item.category === 'dessert');
     const salads = menu.filter(item => item.category === 'salad');
