@@ -6,7 +6,7 @@ const MenuBar = ({ img, title, subtitle }) => {
             blur={{ min: -50, max: 50 }}
             bgImage={img}
             bgImageAlt={title}
-            strength={300}
+            strength={100}
         >
             <div className="hero md:min-h-[600px]">
                 <div className="hero-overlay bg-opacity-60"></div>
