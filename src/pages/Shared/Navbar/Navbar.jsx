@@ -6,7 +6,7 @@ const Navbar = () => {
         <li><Link to={'/menu'}>Menu</Link></li>
         <li><Link to={'/order'}>Order</Link></li>
         <li><Link to={'/contact-us'}>Contact Us</Link></li>
-        <li><Link to={'/login'}>Login</Link></li>
+        <li></li>
     </>
     return (
         <>
@@ -29,7 +29,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         {navOption}
                     </ul>
-                    <button className="btn">Default</button>
+                    <Link className="btn" to={'/login'}>Login</Link>
                 </div>
             </div>
         </>
