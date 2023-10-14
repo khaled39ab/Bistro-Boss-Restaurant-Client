@@ -1,9 +1,29 @@
+import { useEffect, useRef, useState } from 'react';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 
 const SignUp = () => {
+    const captchaRef = useRef(null);
+    const [btnDisabled, setBtnDisabled] = useState(true);
+
+    useEffect(() => {
+        loadCaptchaEnginge(6);
+    }, []);
 
     const handleSignUp = e => {
         e.preventDefault();
     };
+
+    const handleCaptcha = () => {
+        const captchaValue = captchaRef.current.value;
+
+        if (validateCaptcha(captchaValue)) {
+            setBtnDisabled(false)
+        }
+
+        else {
+            setBtnDisabled(true)
+        }
+    }
 
 
     return (
@@ -32,12 +52,19 @@ const SignUp = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" placeholder="Type here password" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <LoadCanvasTemplate />
+                            </label>
+                            <input type="text" ref={captchaRef} placeholder="Type here captcha" className="input input-bordered" required />
+                            <button className="btn btn-outline btn-xs mt-3" onClick={handleCaptcha}>Validate</button>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign Up</button>
+                            <button disabled={btnDisabled} className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                 </div>
