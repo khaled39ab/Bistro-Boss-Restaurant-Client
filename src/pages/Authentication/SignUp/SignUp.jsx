@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -21,7 +22,6 @@ const SignUp = () => {
 
 
     const onSubmit = (data) => {
-        // console.log(data)
         const name = data.name;
         const email = data.email;
         const password = data.password;
@@ -29,9 +29,9 @@ const SignUp = () => {
         createUser(email, password)
             .then(user => {
                 addUsername(name)
-                    .then(() => {})
+                    .then(() => { })
                     .catch(err => console.error(err))
-                console.log(user.user)
+                console.dir(user.user)
             })
             .catch(err => console.error(err))
     }
@@ -92,6 +92,7 @@ const SignUp = () => {
                         <div className="form-control mt-6">
                             <button disabled={btnDisabled} type='submit' className="btn btn-primary">Sign Up</button>
                         </div>
+                        <div className='text-[#D99904] mt-6 text-center'>Already have an account? <Link to={'/login'} className='font-bold underline'>Login</Link></div>
                     </form>
                 </div>
             </div>

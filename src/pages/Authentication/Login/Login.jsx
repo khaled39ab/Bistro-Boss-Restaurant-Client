@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { login } = useContext(AuthContext)
@@ -41,6 +42,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <div className='text-[#D99904] mt-6 text-center'>New here? <Link to={'/sign-up'} className='font-bold underline'>Create a new account</Link></div>
                     </form>
                 </div>
             </div>
