@@ -1,38 +1,48 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+// import { useContext, useEffect, useRef, useState } from 'react';
+// import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+// import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
-    const captchaRef = useRef(null);
-    const [btnDisabled, setBtnDisabled] = useState(true);
-    const { createUser } = useContext(AuthContext);
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
 
-    useEffect(() => {
-        loadCaptchaEnginge(6);
-    }, []);
+    // const captchaRef = useRef(null);
+    // const [btnDisabled, setBtnDisabled] = useState(true);
+    // const { createUser } = useContext(AuthContext);
 
-    const handleSignUp = e => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+    // useEffect(() => {
+    //     loadCaptchaEnginge(6);
+    // }, []);
 
-        createUser(email, password)
-            .then(user => console.log(user.user))
-            .catch(err => console.error(err))
-    };
+    /*  const handleSignUp = e => {
+         e.preventDefault();
+         const name = e.target.name.value;
+         const email = e.target.email.value;
+         const password = e.target.password.value;
+ 
+         createUser(email, password)
+             .then(user => console.log(user.user))
+             .catch(err => console.error(err))
+     }; */
 
-    const handleCaptcha = () => {
+    const onSubmit = (data) => {
+        console.log(data)
+    }
+
+   /*  const handleCaptcha = () => {
         const captchaValue = captchaRef.current.value;
 
         if (validateCaptcha(captchaValue)) {
             setBtnDisabled(false)
-        }
-
-        else {
+        } else {
             setBtnDisabled(true)
         }
-    }
+    } */
 
 
     return (
@@ -43,26 +53,29 @@ const SignUp = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                     <h3 className='text-3xl font-bold text-center mt-5'>Sign Up</h3>
-                    <form className="card-body" onSubmit={handleSignUp}>
+                    <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Type here name" className="input input-bordered" required />
+                            <input type="text" {...register("name", { required: true })} name='name' placeholder="Type here name" className="input input-bordered" required />
+                            {errors.name && <span className='text-error'>Name is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="Type here email" className="input input-bordered" required />
+                            <input type="email"  {...register("email", { required: true })} name='email' placeholder="Type here email" className="input input-bordered" required />
+                            {errors.email && <span className='text-error'>Email is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Type here password" className="input input-bordered" required />
+                            <input type="password" {...register("password", { required: true })} name='password' placeholder="Type here password" className="input input-bordered" required />
+                            {errors.password && <span className='text-error'>Password is required</span>}
                         </div>
-                        <div className="form-control">
+                        {/* <div className="form-control">
                             <label className="label">
                                 <LoadCanvasTemplate />
                             </label>
@@ -71,9 +84,9 @@ const SignUp = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
-                        </div>
+                        </div> */}
                         <div className="form-control mt-6">
-                            <button disabled={btnDisabled} className="btn btn-primary">Sign Up</button>
+                            <button  className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                 </div>
